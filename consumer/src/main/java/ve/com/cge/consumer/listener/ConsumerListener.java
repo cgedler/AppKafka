@@ -34,20 +34,20 @@ public class ConsumerListener {
     private static Logger logger = LoggerFactory.getLogger(ConsumerListener.class);
      
     @KafkaListener(groupId = "group-1",
-            topicPartitions = @TopicPartition(topic = "producer-topic",partitions = {"0"})
+            topicPartitions = @TopicPartition(topic = "producer-topic", partitions = {"0"})
             ,containerFactory = "containerFactory")
     public void listener1(String message){
         logger.info("LISTENER1 ::: Receiving a message {}", message);
     }
 
     @KafkaListener(groupId = "group-1",
-            topicPartitions = @TopicPartition(topic = "producer-topic",partitions = {"1"})
+            topicPartitions = @TopicPartition(topic = "producer-topic", partitions = {"1"})
             ,containerFactory = "containerFactory")
     public void listener2(String message){
         logger.info("LISTENER2 ::: Receiving a message {}",message);
     }
 
-    @KafkaListener(groupId = "group-2",topics = "producer-topic",containerFactory = "containerFactory")
+    @KafkaListener(groupId = "group-2",topics = "producer-topic", containerFactory = "containerFactory")
     public void listener3(String message){
         logger.info("LISTENER3 ::: Receiving a message {}", message);
     }

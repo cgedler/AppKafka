@@ -57,7 +57,7 @@ public class StringConsumerFactoryConfig {
     public ConcurrentKafkaListenerContainerFactory<String, String> containerFactory(ConsumerFactory<String, String> consumerFactory) {
         var factory = new ConcurrentKafkaListenerContainerFactory<String,String>();
         factory.setConsumerFactory(consumerFactory);
-        factory.setRecordInterceptor(new TracingRecordInterceptor());
+        factory.setRecordInterceptor(new TracingRecordInterceptor()); // Interceptor
         return factory;
     }
 
