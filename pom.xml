@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+      
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ve.com.cge</groupId>
+  <artifactId>AppKafka</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+      
+  <properties>    
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>    
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>      
+    <!-- other plugin versions --> 
+    <version.compiler.plugin>3.13.0</version.compiler.plugin>       
+    <version.ear.plugin>3.3.0</version.ear.plugin>
+    <version.ejb.plugin>3.2.1</version.ejb.plugin>      
+    <version.surefire.plugin>3.5.0</version.surefire.plugin>      
+    <version.war.plugin>3.4.0</version.war.plugin>
+    <!-- Spring Boot versions -->
+    <version.springboot>2.7.12</version.springboot>
+    <!-- Spring Kafka versions -->
+    <version.springkafka>2.8.0</version.springkafka>
+    <!-- Logging -->
+    <version.apache.logging>2.17.1</version.apache.logging>
+    <!-- Lombok -->
+    <version.projectlombok>1.18.20</version.projectlombok> 
+  </properties>
+
+  <modules>          
+    <module>producer</module>        
+    <module>consumer</module>         
+  </modules>
+  <dependencyManagement>      
+    <dependencies>                     
+      <dependency>                 
+        <groupId>ve.com.cge</groupId>              
+        <artifactId>producer</artifactId>             
+        <version>${project.version}</version>              
+        <type>jar</type>           
+      </dependency>
+      <dependency>                 
+        <groupId>ve.com.cge</groupId>              
+        <artifactId>consumer</artifactId>             
+        <version>${project.version}</version>              
+        <type>jar</type>           
+      </dependency>
+    </dependencies>  
+  </dependencyManagement>
+</project>
